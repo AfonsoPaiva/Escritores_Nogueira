@@ -50,14 +50,13 @@ function imageshowbook() {
             gsap.fromTo(section, 
                 { xPercent: 120 }, 
                 {
-                    xPercent: 0,
+                    xPercent: 5,
                     ease: "none",
                     scrollTrigger: {
                         trigger: section,
-                        start: "top center",
-                        end: "bottom center",
+                        start: "top 80%", // Start the animation earlier
+                        end: "top 20%", // End the animation earlier
                         scrub: true,
-                      
                     }
                 }
             );
