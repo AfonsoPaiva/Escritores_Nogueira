@@ -721,11 +721,10 @@ body:has(.Book4:hover) .back-img {
   font-size: var(--fs-texts);
   color: white;
   font-family: var(--ff-Main);
-  border-radius: 90% 10% 84% 16%/30% 84% 16% 70%;
+  border-radius: 50px;
   background: rgba(43, 43, 43, 0.9);
-  padding: 100px;
-  padding-top: 160px;
-  text-align: center;
+  padding: 5px;
+  text-align: left;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.9;
@@ -733,41 +732,41 @@ body:has(.Book4:hover) .back-img {
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
 }
 .container-Books .svg-cont .text2 {
-  overflow: visible;
-  grid-area: 2/3/3/4;
-  font-size: var(--fs-texts);
-  color: white;
-  font-family: var(--ff-Main);
-  border-radius: 58% 42% 47% 53%/11% 66% 34% 89%;
-  background: rgba(43, 43, 43, 0.9);
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 150px;
-  text-align: center;
+  grid-area: 2/3/3/4;
+  font-size: var(--fs-texts);
+  color: white;
+  font-family: var(--ff-Main);
+  border-radius: 50px;
+  background: rgba(43, 43, 43, 0.9);
+  padding: 5px;
+  text-align: left;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.9;
+  overflow: visible;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
 }
 .container-Books .svg-cont .text3 {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  overflow: visible;
   grid-area: 3/1/4/2;
   font-size: var(--fs-texts);
   color: white;
   font-family: var(--ff-Main);
-  border-radius: 14% 86% 65% 35%/38% 11% 89% 62%;
+  border-radius: 50px;
   background: rgba(43, 43, 43, 0.9);
-  padding: 160px;
-  text-align: center;
+  padding: 5px;
+  text-align: left;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.9;
+  overflow: visible;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
 }
 .container-Books .svg-cont .box1 {
