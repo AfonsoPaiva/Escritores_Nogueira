@@ -165,6 +165,7 @@ function reloadScreenSize() {
 
 function onPageReady() {
     console.log('onPageReady called');
+    
     bokpage1anim();
     contentAnimation();
     imageshowbook();
@@ -182,7 +183,7 @@ function onPageReady() {
     headlineTestmuEffect();
     text5Effect();
     parteBaixoLivrosEffect();
-    
+    startStarsAnim();
 
     
     console.log('All functions initialized');
@@ -209,6 +210,7 @@ function attachEventListeners() {
 
 
 
+
 barba.init({
     sync: true,
     transitions: [
@@ -218,24 +220,17 @@ barba.init({
                 pageTransition();
                 await delay(1000);
                 done();
-                requestAnimationFrame(() => {
-                    window.scrollTo(0, 0); // Ensure the page scrolls to the top
-                });
             },
             async enter(data) {
-                requestAnimationFrame(() => {
-                    window.scrollTo(0, 0);
-                });
+                window.scrollTo(0, 0); 
+             
                 onPageReady();
             },
             async once(data) {
-                requestAnimationFrame(() => {
-                    window.scrollTo(0, 0);
-                });
+                window.scrollTo(0, 0); 
+             
                 onPageReady();
             },
         },
     ],
 });
-
-

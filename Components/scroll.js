@@ -1,6 +1,6 @@
 // Initialize Lenis with custom options
 const lenis = new Lenis({
-    duration: 8,
+    duration: 5,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
     smooth: true,
     direction: 'vertical',
