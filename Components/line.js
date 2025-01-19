@@ -41,8 +41,8 @@ function startSignatureAnim() {
         ScrollTrigger.create({
             animation: sign,
             trigger: ".sob-aut",
-            start: "80% 80%",  // Adjusted start point
-            end: "100% 30%", // Adjusted end point to avoid overflow
+            start: "15% center",  // Start when the top of the trigger hits the center of the viewport
+            end: "bottom center", // End when the bottom of the trigger hits the center of the viewport
             scrub: 1,
            
         });
@@ -53,10 +53,10 @@ function startSignatureAnim() {
         ScrollTrigger.create({
             animation: sign,
             trigger: ".sob-aut",
-            start: "50% 80%",  // Start a bit earlier
-            end: "100% 30%", // Adjusted end point to avoid overflow
+            start: "15% center",  // Start when the top of the trigger hits the center of the viewport
+            end: "bottom center", // End when the bottom of the trigger hits the center of the viewport
             scrub: 1,
-            
+          
         });
     });
 
@@ -65,7 +65,42 @@ function startSignatureAnim() {
         ease: "none",
         stagger: 0.4
     });
-}
+}   
+function startStarsAnim() {
+    let stars = gsap.timeline();
+    let mm = gsap.matchMedia();
 
+    mm.add("(min-width: 600px)", () => {
+        // For screens wider than 600px (e.g., tablets, desktops)
+        ScrollTrigger.create({
+            animation: stars,
+            trigger: ".text5",
+            start: "top center",  // Start when the top of the trigger hits the center of the viewport
+            end: "bottom center", // End when the bottom of the trigger hits the center of the viewport
+            scrub: 1,
+          
+        });
+    });
+
+    mm.add("(max-width: 599px)", () => {
+        // For screens narrower than 600px (e.g., cellphones)
+        ScrollTrigger.create({
+            animation: stars,
+            trigger: ".text5",
+            start: "top center",  // Start when the top of the trigger hits the center of the viewport
+            end: "bottom center", // End when the bottom of the trigger hits the center of the viewport
+            scrub: 1,
+          
+        });
+    });
+
+    stars.to(".stars-path", {
+        "stroke-dashoffset": 0,
+        fill: "#f4eee0 ", // Replace with the actual color value
+        ease: "none",
+        stagger: 0.4
+    });
+}
 // Call the function to initialize the scroll animation
 startSignatureAnim();
+startStarsAnim();

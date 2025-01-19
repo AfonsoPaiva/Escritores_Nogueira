@@ -4,7 +4,8 @@
 	$color-4: rgb(244, 238, 224);
 
 	@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-	
+
+
 	:root {
 		--ff-Main:'Raleway', sans-serif;
 		--fs-tit1: clamp(2.86rem, 3.89cqi + 1.89rem, 5rem);
@@ -1003,6 +1004,7 @@
 			width: fit-content;
 			height: fit-content;
 			grid-area: 1 / 1 / 2 / 2; 
+			margin-bottom: 35px; 
 			font-size: var(--fs-texts);
 			color: white;
 			font-family: var(--ff-Main);
@@ -1020,6 +1022,7 @@
 			width: fit-content;
 			height: fit-content;
 			grid-area: 2 / 3 / 3 / 4;
+			margin-bottom: 35px; 
 			font-size: var(--fs-texts);
 			color: white;
 			font-family: var(--ff-Main);
@@ -1162,7 +1165,7 @@
 				height: 10vh; // Set the height for the circle
 				padding: 0; // Remove padding
 		
-				font-size: 1.2rem; // Adjust the font size as needed
+				font-size: 1rem; // Adjust the font size as needed
 				max-width: none; // Remove max-width constraint
 				max-height: none; // Remove max-height constraint
 				margin: 0 auto; // Center the button horizontally
@@ -1177,11 +1180,11 @@
 			transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
 		
 			@media (max-width: 599px) {
-				-webkit-clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
-				clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
-				transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
+				-webkit-clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
+        clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
+        transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
 
-transform: translateX(8.4vw);
+transform: translateX(8.8vw);
 				
     }
 		}
@@ -1192,11 +1195,11 @@ transform: translateX(8.4vw);
 			clip-path: path("M286,154 C234,192 148,201 91,183 C34,165 -21,114 11,63 C43,12 158,-11 261,8 C364,27 338,116 286,154 Z");
 		
 			@media (max-width: 599px) {
-				-webkit-clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
-				clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
-				transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
+				-webkit-clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
+        clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
+        transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
 
-				transform: translateX(8.4vw);
+				transform: translateX(8.8vw);
 
 			}
 		}
@@ -1253,6 +1256,7 @@ transform: translateX(8.4vw);
 		}
 		
 		.img-booksshow {
+			opacity: 1;
 			flex: 0 0 auto;
 			width: 60vw;
 			height: auto;
@@ -1264,80 +1268,82 @@ transform: translateX(8.4vw);
 		
 		@media (max-width: 1920px) and (min-width: 1367px) {
 			.img-booksshow {
+				opacity: 1;
 				width: 50vw; // Adjust width for screens between 1920px and 1367px
 			}
 		}
 		
 		@media (max-width: 1366px) and (min-width: 1024px) {
 			.img-booksshow {
+				opacity: 1;
 				width: 30vw; // Adjust width for screens between 1366px and 1024px
 			}
 		}
 		
 		@media (max-width: 1023px) and (min-width: 768px) {
 			.img-booksshow {
+				opacity: 1;
 				width: 20vw; // Adjust width for screens between 1023px and 768px
 			}
 		}
 		
 		@media (max-width: 767px) {
 			.img-booksshow {
+				opacity: 1;
 				width: 40vw; // Adjust width for screens smaller than 768px
 			}
 		}
 
 	
 
-		  @media (max-width: 1600px) {
-			
-			.headline-galery{
-				top: 5vh;
-			}
-			.headline-sinopse{
-				top: 15vh;
-			}
-			.headline-testmu{
-				top: 38vh;
-			}
-			.parte-baixo-livros{
-				top: 13vh;
-			}
-			.box2 .contgallery {
-				flex-direction: column;
-				width: 100vw;
-				top: 5vh;
-			}
-			.box2 .img-booksshow {
-				width: 90vw;
-			}
-		}
-	  
-		@media (max-width: 1900px){
-			
-			.text1{
-				grid-area: 1 / 1 / 2 / 4;
-	
-			  }
-			  .text2{
-				grid-area: 2 / 1 / 3 / 4;
-				
-				
-			  }
-			  .text3{
-				grid-area: 3 / 1 / 4 / 4;
-			
-			  }
-			 
+		 @media (max-width: 1600px) {
+    .headline-galery {
+        top: 5vh;
+    }
+    .headline-sinopse {
+        top: 15vh;
+    }
+    .headline-testmu {
+        top: 38vh;
+    }
+    .parte-baixo-livros {
+        top: 13vh;
+    }
+    .box2 .contgallery {
+        flex-direction: column;
+        width: 100vw;
+        top: 5vh;
+    }
+    .box2 .img-booksshow {
+        width: 90vw;
+    }
+}
 
-		}
-		@media (max-width: 700px){
-			.text2{
-				padding: 31%;
-			}
-			.text3{
-				padding: 31%;
-			}
-		}
+@media (max-width: 1900px) {
+    .text1 {
+        grid-area: 1 / 1 / 2 / 4;
+    }
+    .text2 {
+        grid-area: 2 / 1 / 3 / 4;
+    }
+    .text3 {
+        grid-area: 3 / 1 / 4 / 4;
+    }
+}
+
+@media (max-width: 700px) {
+    .text1 {
+        grid-area: 1 / 1 / 2 / 4;
+        margin-bottom: 35px; // Add margin to create space
+    }
+    .text2 {
+        grid-area: 2 / 1 / 3 / 4;
+        margin-bottom: 35px; // Add margin to create space
+    }
+    .text3 {
+        grid-area: 3 / 1 / 4 / 4;
+    }
+}
 
 			.sinopse{
 				grid-area: 4 / 1 / 5 / 4; 
@@ -1377,7 +1383,7 @@ transform: translateX(8.4vw);
 				font-size: var(--fs-texts);
 				color: white;
 				font-family: var(--ff-Main);
-				padding: 45px;
+				padding: 25px;
 				text-align: left;
 				font-weight: 500;
 				line-height: 1.2;
@@ -1385,12 +1391,78 @@ transform: translateX(8.4vw);
 			}
 			
 			@media (max-width: 768px) {
-				.sob-aut .text4 {
-					font-size: calc(var(--fs-texts) * 0.8); // Make text smaller
-					padding: 20px;
+				.autograph__path {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			
+				.sob-aut {
+					position: relative;
+				}
+			
+				.sob-aut .img-aut {
+					position: relative;
 				}
 			}
 			
+			.autograph_zone {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end; /* Ensure the autograph sticks to the bottom */
+				width: 100%;
+				padding-top: 45px;
+			}
+			.autograph__path {
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				position: relative;
+				fill: none;
+				stroke: $color-4;
+				width: 100%; // Adjust the width of the box
+				height: 100px; // Adjust the height of the box
+			
+			}
+
+			.stars-path {
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				position: relative;
+				fill: none; // Set the fill color
+				stroke: $color-4; // Set the stroke color
+				width: 100%; // Adjust the width of the box
+				height: 100px; // Adjust the height of the box
+				transition: stroke-dashoffset 1s ease, fill 1.5s ease; // Add transition for smooth animation
+			}
+		
+			
+			.sob-aut .img-aut {
+				grid-area: 1 / 2 / 2 / 3;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				right: 0;
+				overflow: hidden;
+			}
+			
+			@media (min-width: 769px) {
+				.autograph__path {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+				}
+			
+				.sob-aut {
+					position: relative;
+				}
+			
+				.sob-aut .img-aut {
+					position: relative;
+				}
+			}
 			.autograph__path {
 				stroke-dasharray: 1000;
 				stroke-dashoffset: 1000;
@@ -1653,10 +1725,30 @@ transform: translateX(8.4vw);
 					left: 25px;
 					
 				  }
-				  .stars-svg{
-					width: 250px;
+				  .stars-svg {
+					width: 25%;
+				
+					height: auto; // Adjust the height to fit the content
+				}
+				
+				@media screen and (max-width: 599px) {
+					.stars-svg {
+						width: 50%;
+					
+						height: auto; // Adjust the height to fit the content
+					}
+					
+				}
+				.stars_space {
+			
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start; // Align items to the top
+					width: auto; // Adjust the width to fit the content
 					height: auto;
-				  }
+					margin-top: 0; // Remove any top margin
+    				padding-top: 0; // Adjust the height to fit the content
+				}
 				  .butspace {
 					grid-area: 3 / 1 / 4 / 3;
 					position: relative;

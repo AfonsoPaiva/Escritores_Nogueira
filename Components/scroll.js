@@ -1,13 +1,12 @@
-
 // Initialize Lenis with custom options
 const lenis = new Lenis({
-    duration: 4,
+    duration: 8,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
     smooth: true,
     direction: 'vertical',
     gestureDirection: 'vertical',
     smoothTouch: true,
-    touchMultiplier: 1.5,
+    touchMultiplier: 0.2, // Lowered touchMultiplier for smoother touch scrolling
     infinite: false,
 });
 

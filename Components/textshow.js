@@ -201,8 +201,8 @@ function sobautEffect() {
 
         // Animate the .sob-aut element coming from the left
         tl.from(sobaut, {
-            x: -1000, // Move from the left
-            duration: 1.5,
+            x: -3000, // Move from the left
+            duration: 3,
             ease: "power2.out",
         });
     } else {

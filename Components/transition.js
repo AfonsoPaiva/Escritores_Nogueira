@@ -15,7 +15,10 @@ function imageshowbook() {
         console.error("No elements found with the class .img-booksshow");
         return;
     }
-    
+
+    // Ensure images are visible initially
+    gsap.set(sections, { opacity: 1 });
+
     mm.add("(min-width: 1600px)", () => {
         console.log("Applying animation for min-width: 1600px");
         gsap.to(sections, {
@@ -42,10 +45,10 @@ function imageshowbook() {
             }
         });
     });
-    
+
     mm.add("(max-width: 1599px)", () => {
         console.log("Applying animation for max-width: 1599px");
-    
+
         sections.forEach((section) => {
             gsap.fromTo(section, 
                 { xPercent: 120 }, 
@@ -57,6 +60,9 @@ function imageshowbook() {
                         start: "top 80%", // Start the animation earlier
                         end: "top 20%", // End the animation earlier
                         scrub: true,
+                        onEnter: () => {
+                            gsap.set(section, { opacity: 1 }); // Ensure the section is visible
+                        }
                     }
                 }
             );

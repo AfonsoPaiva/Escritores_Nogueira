@@ -718,6 +718,7 @@ body:has(.Book4:hover) .back-img {
   height: -moz-fit-content;
   height: fit-content;
   grid-area: 1/1/2/2;
+  margin-bottom: 35px;
   font-size: var(--fs-texts);
   color: white;
   font-family: var(--ff-Main);
@@ -737,6 +738,7 @@ body:has(.Book4:hover) .back-img {
   height: -moz-fit-content;
   height: fit-content;
   grid-area: 2/3/3/4;
+  margin-bottom: 35px;
   font-size: var(--fs-texts);
   color: white;
   font-family: var(--ff-Main);
@@ -868,7 +870,7 @@ body:has(.Book4:hover) .back-img {
     width: 50vw;
     height: 10vh;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     max-width: none;
     max-height: none;
     margin: 0 auto;
@@ -883,10 +885,10 @@ body:has(.Book4:hover) .back-img {
 }
 @media (max-width: 599px) {
   .container-Books .svg-cont .box1 .button--janus::before {
-    -webkit-clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
-    clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
+    -webkit-clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
+    clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
     transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
-    transform: translateX(8.4vw);
+    transform: translateX(8.8vw);
   }
 }
 .container-Books .svg-cont .box1 .button--janus:hover::before {
@@ -896,10 +898,10 @@ body:has(.Book4:hover) .back-img {
 }
 @media (max-width: 599px) {
   .container-Books .svg-cont .box1 .button--janus:hover::before {
-    -webkit-clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
-    clip-path: path("M129.78,74.34 C110.04,95.34 52.5,92.4 25.2,76.86 C-2.1,61.32 -2.94,36.96 3.78,21.42 C10.5,5.88 28.14,-5.04 71.4,2.94 C114.66,10.92 149.52,54.6 129.78,74.34 Z");
+    -webkit-clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
+    clip-path: path("M110.96,63.558 C94.086,81.513 44.892,79.002 21.546,65.718 C-1.8,52.434 -2.511,31.599 3.231,19.215 C8.973,6.831 24.057,-4.311 61.047,2.511 C98.037,9.333 127.836,46.683 110.96,63.558 Z");
     transition: clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), -webkit-clip-path 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55), background 0.5s ease;
-    transform: translateX(8.4vw);
+    transform: translateX(8.8vw);
   }
 }
 .container-Books .svg-cont .box1 .button--janus::after {
@@ -944,6 +946,7 @@ body:has(.Book4:hover) .back-img {
   position: relative;
 }
 .container-Books .svg-cont .img-booksshow {
+  opacity: 1;
   flex: 0 0 auto;
   width: 60vw;
   height: auto;
@@ -954,21 +957,25 @@ body:has(.Book4:hover) .back-img {
 }
 @media (max-width: 1920px) and (min-width: 1367px) {
   .container-Books .svg-cont .img-booksshow {
+    opacity: 1;
     width: 50vw;
   }
 }
 @media (max-width: 1366px) and (min-width: 1024px) {
   .container-Books .svg-cont .img-booksshow {
+    opacity: 1;
     width: 30vw;
   }
 }
 @media (max-width: 1023px) and (min-width: 768px) {
   .container-Books .svg-cont .img-booksshow {
+    opacity: 1;
     width: 20vw;
   }
 }
 @media (max-width: 767px) {
   .container-Books .svg-cont .img-booksshow {
+    opacity: 1;
     width: 40vw;
   }
 }
@@ -1006,11 +1013,16 @@ body:has(.Book4:hover) .back-img {
   }
 }
 @media (max-width: 700px) {
+  .container-Books .svg-cont .text1 {
+    grid-area: 1/1/2/4;
+    margin-bottom: 35px;
+  }
   .container-Books .svg-cont .text2 {
-    padding: 31%;
+    grid-area: 2/1/3/4;
+    margin-bottom: 35px;
   }
   .container-Books .svg-cont .text3 {
-    padding: 31%;
+    grid-area: 3/1/4/4;
   }
 }
 .container-Books .svg-cont .sinopse {
@@ -1048,16 +1060,74 @@ body:has(.Book4:hover) .back-img {
   font-size: var(--fs-texts);
   color: white;
   font-family: var(--ff-Main);
-  padding: 45px;
+  padding: 25px;
   text-align: left;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.9;
 }
 @media (max-width: 768px) {
-  .container-Books .svg-cont .sob-aut .text4 {
-    font-size: calc(var(--fs-texts) * 0.8);
-    padding: 20px;
+  .container-Books .svg-cont .autograph__path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container-Books .svg-cont .sob-aut {
+    position: relative;
+  }
+  .container-Books .svg-cont .sob-aut .img-aut {
+    position: relative;
+  }
+}
+.container-Books .svg-cont .autograph_zone {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Ensure the autograph sticks to the bottom */
+  width: 100%;
+  padding-top: 45px;
+}
+.container-Books .svg-cont .autograph__path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  position: relative;
+  fill: none;
+  stroke: rgb(244, 238, 224);
+  width: 100%;
+  height: 100px;
+}
+.container-Books .svg-cont .stars-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  position: relative;
+  fill: none;
+  stroke: rgb(244, 238, 224);
+  width: 100%;
+  height: 100px;
+  transition: stroke-dashoffset 1s ease, fill 1.5s ease;
+}
+.container-Books .svg-cont .sob-aut .img-aut {
+  grid-area: 1/2/2/3;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  right: 0;
+  overflow: hidden;
+}
+@media (min-width: 769px) {
+  .container-Books .svg-cont .autograph__path {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .container-Books .svg-cont .sob-aut {
+    position: relative;
+  }
+  .container-Books .svg-cont .sob-aut .img-aut {
+    position: relative;
   }
 }
 .container-Books .svg-cont .autograph__path {
@@ -1259,8 +1329,23 @@ body:has(.Book4:hover) .back-img {
   left: 25px;
 }
 .container-Books .svg-cont .testmu .stars-svg {
-  width: 250px;
+  width: 25%;
   height: auto;
+}
+@media screen and (max-width: 599px) {
+  .container-Books .svg-cont .testmu .stars-svg {
+    width: 50%;
+    height: auto;
+  }
+}
+.container-Books .svg-cont .testmu .stars_space {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  padding-top: 0;
 }
 .container-Books .svg-cont .testmu .butspace {
   grid-area: 3/1/4/3;
