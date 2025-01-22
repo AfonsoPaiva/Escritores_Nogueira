@@ -1,16 +1,3 @@
-/*
-function delay(n) {
-    n = n || 1000;
-    return new Promise(done => {
-        setTimeout(() => {
-            done();
-        }, n);
-    });
-}
-*/
-
-//fix later use prefretch https://barba.js.org/docs/plugins/prefetch/
-
 const wrapper = document.querySelector('.wrapper');
 
 function delay(ms) {
@@ -26,11 +13,9 @@ function imageshowbook() {
         return;
     }
 
-    // Ensure images are visible initially
     gsap.set(sections, { opacity: 1 });
 
     mm.add("(min-width: 1600px)", () => {
-        console.log("Applying animation for min-width: 1600px");
         gsap.to(sections, {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
@@ -40,31 +25,16 @@ function imageshowbook() {
                 scrub: 5,
                 snap: 1 / (sections.length - 1),
                 end: () => "+=" + document.querySelector(".headline-galery").offsetWidth,
-                onEnter: () => {
-                    document.body.style.overflowY = "hidden";
-                },
-                onLeave: () => {
-                    document.body.style.overflowY = "auto";
-                },
-                onEnterBack: () => {
-                    document.body.style.overflowY = "hidden";
-                },
-                onLeaveBack: () => {
-                    document.body.style.overflowY = "auto";
-                },
+                onEnter: () => document.body.style.overflowY = "hidden",
+                onLeave: () => document.body.style.overflowY = "auto",
+                onEnterBack: () => document.body.style.overflowY = "hidden",
+                onLeaveBack: () => document.body.style.overflowY = "auto",
             }
         });
     });
 
     mm.add("(max-width: 1599px)", () => {
-        console.log("Applying animation for max-width: 1599px");
-
-        if (sections.length === 0) {
-            console.log("No sections found to animate");
-        }
-
         sections.forEach((section) => {
-            console.log("Animating section:", section);
             gsap.fromTo(section, 
                 { xPercent: 120 }, 
                 {
@@ -72,31 +42,22 @@ function imageshowbook() {
                     ease: "none",
                     scrollTrigger: {
                         trigger: section,
-                        start: "top 80%", // Start the animation earlier
-                        end: "top 20%", // End the animation earlier
+                        start: "top 80%",
+                        end: "top 20%",
                         scrub: true,
-                        markers: true, // Add markers to debug the ScrollTrigger
-                        onEnter: () => {
-                            gsap.set(section, { opacity: 1, willChange: 'transform' }); // Ensure the section is visible
-                        }
+                        markers: true,
+                        onEnter: () => gsap.set(section, { opacity: 1, willChange: 'transform' })
                     }
                 }
             );
         });
-        ScrollTrigger.refresh(); // Refresh ScrollTrigger to ensure markers are updated
+        ScrollTrigger.refresh();
     });
 }
 
-
 function pageTransition() {
     var tl = gsap.timeline({
-        onComplete: () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            console.log(`Updated screen size: width=${width}, height=${height}`);
-            window.dispatchEvent(new Event('resize'));
-            
-        }
+       
     });
     
     tl.to('.loading-screen', {
@@ -112,8 +73,14 @@ function pageTransition() {
         left: "100%",
         ease: "Expo.easeInOut",
         delay: 2,
+        onComplete: () => {
+            window.scrollTo(0, 0);
+            imageshowbook() ;
+            bokpage1anim();
+        }
     });
 
+    
     tl.set(".loading-screen", { left: "-100%" });
 }
 
@@ -186,15 +153,11 @@ function reloadScreenSize() {
     window.dispatchEvent(new Event('resize'));
 }
 
-
-
 function onPageReady() {
-    console.log('onPageReady called');
-    
     reloadScreenSize();
+    imageshowbook(); // Prioritize this function
     bokpage1anim();
     contentAnimation();
-    imageshowbook();
     initSvgScrollAnimation();
     attachEventListeners();
     startSignatureAnim();
@@ -209,9 +172,6 @@ function onPageReady() {
     text5Effect();
     parteBaixoLivrosEffect();
     startStarsAnim();
-
-    
-    console.log('All functions initialized');
 }
 
 function attachEventListeners() {
@@ -230,15 +190,13 @@ function attachEventListeners() {
     document.querySelector('.but-tes').addEventListener('click', function() {
         scrollToSection('testemunhos');
     });
-    
 }
-
 
 barba.use(barbaPrefetch, {
     root: wrapper,
     timeout: 2500,
     limit: 0
-  });
+});
 
 barba.init({
     sync: true,
@@ -250,17 +208,14 @@ barba.init({
                 const done = this.async();
                 pageTransition();
                 await delay(3000);
-            
                 done();
             },
             async enter(data) {
                 window.scrollTo(0, 0); 
-             
                 onPageReady();
             },
             async once(data) {
                 window.scrollTo(0, 0); 
-             
                 onPageReady();
             },
         },
