@@ -1,10 +1,20 @@
+/*
 function delay(n) {
-    n = n || 2000;
+    n = n || 1000;
     return new Promise(done => {
         setTimeout(() => {
             done();
         }, n);
     });
+}
+*/
+
+//fix later use prefretch https://barba.js.org/docs/plugins/prefetch/
+
+const wrapper = document.querySelector('.prefetch-wrapper');
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function imageshowbook() {
@@ -76,7 +86,6 @@ function imageshowbook() {
         ScrollTrigger.refresh(); // Refresh ScrollTrigger to ensure markers are updated
     });
 }
-
 
 
 function pageTransition() {
@@ -218,7 +227,11 @@ function attachEventListeners() {
 }
 
 
-
+barba.use(barbaPrefetch, {
+    root: wrapper,
+    timeout: 2500,
+    limit: 0
+  });
 
 barba.init({
     sync: true,

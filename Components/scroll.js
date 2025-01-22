@@ -3,6 +3,7 @@ const lenis = new Lenis({
     duration: 5,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
     smooth: true,
+    lerp: 0.1,
     direction: 'vertical',
     gestureDirection: 'vertical',
     smoothTouch: true,
