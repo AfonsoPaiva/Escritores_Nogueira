@@ -49,7 +49,12 @@ function imageshowbook() {
     mm.add("(max-width: 1599px)", () => {
         console.log("Applying animation for max-width: 1599px");
 
+        if (sections.length === 0) {
+            console.log("No sections found to animate");
+        }
+
         sections.forEach((section) => {
+            console.log("Animating section:", section);
             gsap.fromTo(section, 
                 { xPercent: 120 }, 
                 {
@@ -60,13 +65,15 @@ function imageshowbook() {
                         start: "top 80%", // Start the animation earlier
                         end: "top 20%", // End the animation earlier
                         scrub: true,
+                        markers: true, // Add markers to debug the ScrollTrigger
                         onEnter: () => {
-                            gsap.set(section, { opacity: 1 }); // Ensure the section is visible
+                            gsap.set(section, { opacity: 1, willChange: 'transform' }); // Ensure the section is visible
                         }
                     }
                 }
             );
         });
+        ScrollTrigger.refresh(); // Refresh ScrollTrigger to ensure markers are updated
     });
 }
 
@@ -74,21 +81,23 @@ function imageshowbook() {
 
 function pageTransition() {
     var tl = gsap.timeline();
-
+    
     tl.to('.loading-screen', {
-        duration: 1.2,
+        duration: 3,
         width: "100%",
         left: "0%",
         ease: "Expo.easeInOut"
     });
 
     tl.to('.loading-screen', {
-        duration: 1.2,
+        duration: 3,
         width: "100%",
         left: "100%",
         ease: "Expo.easeInOut",
-        delay: 0.8,
+        delay: 2,
+        
     });
+
     tl.set(".loading-screen", { left: "-100%" });
 }
 
@@ -166,11 +175,11 @@ function reloadScreenSize() {
 function onPageReady() {
     console.log('onPageReady called');
     
+    reloadScreenSize();
     bokpage1anim();
     contentAnimation();
     imageshowbook();
     initSvgScrollAnimation();
-    reloadScreenSize();
     attachEventListeners();
     startSignatureAnim();
     initializeModalsAndForm();  
@@ -218,7 +227,8 @@ barba.init({
             async leave(data) {
                 const done = this.async();
                 pageTransition();
-                await delay(1000);
+                await delay(3000);
+            
                 done();
             },
             async enter(data) {
