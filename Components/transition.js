@@ -11,7 +11,7 @@ function delay(n) {
 
 //fix later use prefretch https://barba.js.org/docs/plugins/prefetch/
 
-const wrapper = document.querySelector('.prefetch-wrapper');
+const wrapper = document.querySelector('.wrapper');
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -89,7 +89,15 @@ function imageshowbook() {
 
 
 function pageTransition() {
-    var tl = gsap.timeline();
+    var tl = gsap.timeline({
+        onComplete: () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            console.log(`Updated screen size: width=${width}, height=${height}`);
+            window.dispatchEvent(new Event('resize'));
+            
+        }
+    });
     
     tl.to('.loading-screen', {
         duration: 3,
@@ -104,7 +112,6 @@ function pageTransition() {
         left: "100%",
         ease: "Expo.easeInOut",
         delay: 2,
-        
     });
 
     tl.set(".loading-screen", { left: "-100%" });
@@ -235,6 +242,8 @@ barba.use(barbaPrefetch, {
 
 barba.init({
     sync: true,
+    cacheIgnore: true,
+    prefetchIgnore: false,
     transitions: [
         {
             async leave(data) {
