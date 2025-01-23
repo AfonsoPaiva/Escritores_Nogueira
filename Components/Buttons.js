@@ -172,4 +172,17 @@ document.querySelector('.but-tes').addEventListener('click', function() {
     scrollToSection('testemunhos');
 });
 
+let zoomActive = false;
+
+const book = document.querySelectorAll('.book');
+
+magnifyingGlass.addEventListener('click', function() {
+  if (!zoomActive) {
+    gsap.to(book, { duration: 1, x: 100, scale: 1.7 });
+    zoomActive = true;
+  } else {
+    gsap.to(book, { duration: 1, x: 0, scale: 1 });
+    zoomActive = false;
+  }
+});
 
