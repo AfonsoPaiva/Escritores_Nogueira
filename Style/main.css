@@ -489,9 +489,8 @@ body:has(.Book4:hover) .back-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26vh;
-  min-width: 26vh;
-  height: 39vh;
+  width: auto;
+  height: 54vh;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
@@ -597,13 +596,33 @@ body:has(.Book4:hover) .back-img {
   transition: width 0.5s ease-in-out;
 }
 
+@media (min-width: 1920px) {
+  .image-block {
+    height: 42vh;
+  }
+}
 /*==============================================LIVROS==========================================================*/
+.segredobackground .container-Books {
+  background-color: #76ABAE;
+}
+
+.promRouxbackground .container-Books {
+  background-color: #DEAA79;
+}
+
+.gemeabackground .container-Books {
+  background-color: #A5B68D;
+}
+
+.verdadebackground .container-Books {
+  background-color: #A0937D;
+}
+
 .container-Books {
   overflow: hidden !important;
   height: auto;
   width: 100%;
   position: relative;
-  background-color: #76ABAE;
 }
 .container-Books .backgroundanim {
   position: fixed;
@@ -1523,6 +1542,7 @@ body:has(.Book4:hover) .back-img {
   background-color: #31363F;
   border-radius: 15px;
   right: 5vw;
+  padding: 15px;
 }
 
 .form-basin {
@@ -1810,15 +1830,15 @@ body:has(.Book4:hover) .back-img {
 
 .book {
   pointer-events: all;
-  width: 90%;
+  width: 50vw;
   height: auto;
   max-width: 50vw;
-  max-height: 80vh;
+  max-height: 75vh;
   min-width: 900px;
   aspect-ratio: 4/3;
   position: absolute;
   left: 50%;
-  top: 54%;
+  top: 55%;
   transform: translate(-50%, -50%);
   perspective: 1500px;
   -webkit-user-select: none;
