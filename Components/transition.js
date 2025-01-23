@@ -1,5 +1,5 @@
 
-const wrapper = document.querySelector('.container-Books');
+const wrapper = document.querySelector('.container-Main');
 
 if (!wrapper) {
     console.error('Wrapper element not found');
@@ -65,6 +65,7 @@ function imageshowbook() {
 function pageTransition() {
     var tl = gsap.timeline();
 
+    // Animate loading-screen from left to right
     tl.to('.loading-screen', {
         duration: 3,
         width: "100%",
@@ -72,15 +73,20 @@ function pageTransition() {
         ease: "Expo.easeInOut"
     });
 
+    // Move loading-screen from right to left after 1-second delay
     tl.to('.loading-screen', {
         duration: 3,
         width: "100%",
         left: "100%",
         ease: "Expo.easeInOut",
-        delay: 2,
+        delay: 1
     });
 
+    // Reset loading-screen to the starting position after the animation
     tl.set(".loading-screen", { left: "-100%" });
+
+    // Reload the page immediately after the animation finishes
+    
 }
 
 function contentAnimation() {
@@ -193,36 +199,37 @@ function attachEventListeners() {
 
 barba.use(barba.prefetch);
 
+
 barba.init({
     sync: true,
     transitions: [
         {
             async leave(data) {
                 const done = this.async();
-                pageTransition();
-                await delay(3000);
-                done();
+                pageTransition(); 
+                await delay(4000); 
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+                done(); 
             },
             async enter(data) {
                 window.scrollTo(0, 0);
                 onPageReady();
+              
             },
             async once(data) {
                 window.scrollTo(0, 0);
-                onPageReady();
+                onPageReady();   
             },
-            beforeEnter(data) {
-                // Prefetch the next page before the transition starts
-                return fetch(data.next.url)
-                    .then(response => response.text())
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        document.querySelector('#barba-wrapper').innerHTML = doc.querySelector('#barba-wrapper').innerHTML;
-                    });
-            }
         },
     ],
 });
+
+window.addEventListener('load', () => {
+    
+    gsap.fromTo("body", { opacity: 0 }, { opacity: 1, duration: 2 });
+});
+
 
 

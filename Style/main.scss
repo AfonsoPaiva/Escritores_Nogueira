@@ -44,8 +44,12 @@
 
 	html.lenis, html.lenis body {
 		height: auto;
+		
 	  }
-	  
+	  body{
+		background: $color-1;
+	  }
+	
 	  .lenis.lenis-smooth {
 		scroll-behavior: auto !important;
 	  }
@@ -653,6 +657,7 @@
 
 
 }
+
 
 .load-container{
 	position: fixed;

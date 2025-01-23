@@ -34,6 +34,10 @@ html.lenis, html.lenis body {
   height: auto;
 }
 
+body {
+  background: rgb(43, 43, 43);
+}
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
