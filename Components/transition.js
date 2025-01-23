@@ -1,4 +1,10 @@
-const wrapper = document.querySelector('.wrapper');
+
+const wrapper = document.querySelector('.container-Books');
+
+if (!wrapper) {
+    console.error('Wrapper element not found');
+}
+
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -45,7 +51,7 @@ function imageshowbook() {
                         start: "top 80%",
                         end: "top 20%",
                         scrub: true,
-                        markers: true,
+        
                         onEnter: () => gsap.set(section, { opacity: 1, willChange: 'transform' })
                     }
                 }
@@ -55,11 +61,10 @@ function imageshowbook() {
     });
 }
 
+
 function pageTransition() {
-    var tl = gsap.timeline({
-       
-    });
-    
+    var tl = gsap.timeline();
+
     tl.to('.loading-screen', {
         duration: 3,
         width: "100%",
@@ -73,14 +78,8 @@ function pageTransition() {
         left: "100%",
         ease: "Expo.easeInOut",
         delay: 2,
-        onComplete: () => {
-            window.scrollTo(0, 0);
-            imageshowbook() ;
-            bokpage1anim();
-        }
     });
 
-    
     tl.set(".loading-screen", { left: "-100%" });
 }
 
@@ -192,16 +191,10 @@ function attachEventListeners() {
     });
 }
 
-barba.use(barbaPrefetch, {
-    root: wrapper,
-    timeout: 2500,
-    limit: 0
-});
+barba.use(barba.prefetch);
 
 barba.init({
     sync: true,
-    cacheIgnore: true,
-    prefetchIgnore: false,
     transitions: [
         {
             async leave(data) {
@@ -211,13 +204,25 @@ barba.init({
                 done();
             },
             async enter(data) {
-                window.scrollTo(0, 0); 
+                window.scrollTo(0, 0);
                 onPageReady();
             },
             async once(data) {
-                window.scrollTo(0, 0); 
+                window.scrollTo(0, 0);
                 onPageReady();
             },
+            beforeEnter(data) {
+                // Prefetch the next page before the transition starts
+                return fetch(data.next.url)
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        document.querySelector('#barba-wrapper').innerHTML = doc.querySelector('#barba-wrapper').innerHTML;
+                    });
+            }
         },
     ],
 });
+
+
